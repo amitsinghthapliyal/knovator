@@ -9,6 +9,7 @@ This project demonstrates **scalable backend design**, **data ingestion**, and a
 ## Live URL
 ```
 https://knovator-red.vercel.app/
+https://knovator-production.up.railway.app/api/import-logs
 ```
 
 ---
