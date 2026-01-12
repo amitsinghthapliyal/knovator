@@ -167,9 +167,8 @@ The UI intentionally avoids complex visualizations and focuses on operational cl
 ## Future Improvements (Optional)
 
 - Parallel feed processing
-- WebSocket-based real-time UI updates
+- WebSocket/SSE-based real-time UI updates
 - Retry & dead-letter queues
-- Feed health monitoring
 
 ---
 
