@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+client/node_modules
+server/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -14,8 +16,8 @@
 /coverage
 
 # next.js
-/.next/
-/out/
+client/.next/
+client/out/
 
 # production
 /build
