@@ -117,7 +117,7 @@ cd server
 npm install
 ```
 
-Create `.env`:
+Create `.env` in root folder (server):
 
 ```env
 PORT=4000
@@ -140,7 +140,7 @@ cd client
 npm install
 ```
 
-Create `.env`:
+Create `.env.local` in root folder (client):
 
 ```env
 NEXT_PUBLIC_API_BASE=<Server URL>
