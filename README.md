@@ -6,6 +6,26 @@ This project demonstrates **scalable backend design**, **data ingestion**, and a
 
 ---
 
+## Live URL
+```
+https://knovator-red.vercel.app/
+```
+
+---
+
+## Deployment Services/Tools
+
+The backend (Express API + Cron + BullMQ Worker) is deployed on **Railway**.
+The Frontend (Next.js) is deployed on **Vercel**.
+
+### Services Used
+- **Railway** – Node.js hosting
+- **MongoDB Atlas (Free M0)** – Database
+- **Upstash Redis (Free)** – Queue (BullMQ)
+- **Vercel** – Next.js Deployment
+
+---
+
 ## Features
 
 - **Scheduled Imports** using cron
@@ -19,7 +39,7 @@ This project demonstrates **scalable backend design**, **data ingestion**, and a
 
 ---
 
-## 🧠 High-Level Architecture
+## Architecture
 
 ```
 Cron Job
@@ -117,8 +137,20 @@ npm run dev
 ```bash
 cd client
 npm install
+```
+
+Create `.env`:
+
+```env
+NEXT_PUBLIC_API_BASE=<Server URL>
+```
+
+Run Nex.js Frontend:
+
+```bash
 npm run dev
 ```
+
 
 Frontend runs at:
 
