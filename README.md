@@ -43,7 +43,8 @@ See **docs/architecture.md** for a detailed breakdown.
 
 ## Supported Feeds
 
-````https://jobicy.com/?feed=job_feed
+```json
+https://jobicy.com/?feed=job_feed
 ○ https://jobicy.com/?feed=job_feed&job_categories=smm&job_ty
 pes=full-time
 ○ https://jobicy.com/?feed=job_feed&job_categories=seller&job_t
@@ -54,7 +55,8 @@ media
 ○ https://jobicy.com/?feed=job_feed&job_categories=copywriting
 ○ https://jobicy.com/?feed=job_feed&job_categories=business
 ○ https://jobicy.com/?feed=job_feed&job_categories=management
-○ https://www.higheredjobs.com/rss/articleFeed.cfm ```
+○ https://www.higheredjobs.com/rss/articleFeed.cfm
+```
 
 ---
 
@@ -92,7 +94,7 @@ media
 ```bash
 cd server
 npm install
-````
+```
 
 Create `.env`:
 
