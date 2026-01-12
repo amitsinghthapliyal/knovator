@@ -1,21 +1,21 @@
-# Job Feed Importer – Artha Job Board Task
+# Job Feed Importer – Knovator Task
 
 A production-ready **job ingestion system** that periodically imports jobs from multiple external RSS feeds, processes them asynchronously, and exposes import history via an admin UI.
 
-This project demonstrates **scalable backend design**, **idempotent data ingestion**, and a **clean operational frontend**.
+This project demonstrates **scalable backend design**, **data ingestion**, and a **clean operational frontend**.
 
 ---
 
-## ✨ Features
+## Features
 
-- ⏳ **Scheduled Imports** using cron
-- 🌐 **Multi-feed RSS ingestion** (Jobicy + HigherEdJobs)
-- 🔄 **Idempotent job processing** (no duplicates)
-- 🧵 **Asynchronous processing** with Redis + BullMQ
-- 📊 **Import history tracking** (new / updated / failed jobs)
-- 🖥️ **Admin UI** with pagination & auto-refresh
-- 🧪 **Validation & normalization** using Zod
-- 📦 **MongoDB persistence**
+- **Scheduled Imports** using cron
+- **Multi-feed RSS ingestion** (Jobicy + HigherEdJobs)
+- **Idempotent job processing** (no duplicates)
+- **Asynchronous processing** with Redis + BullMQ
+- **Import history tracking** (new / updated / failed jobs)
+- **Admin UI** with pagination & auto-refresh
+- **Validation & normalization** using Zod
+- **MongoDB persistence**
 
 ---
 
@@ -37,32 +37,28 @@ MongoDB (Jobs + Import Logs)
 Admin UI (Next.js)
 ```
 
-📄 See **architecture.md** for a detailed breakdown.
+See **docs/architecture.md** for a detailed breakdown.
 
 ---
 
-## 🌐 Supported Feeds
+## Supported Feeds
 
-### Jobicy
-
-- All jobs
-- SMM (Full-time)
-- Seller (France, Full-time)
-- Design & Multimedia
-- Data Science
-- Copywriting
-- Business
-- Management
-
-### HigherEdJobs
-
-- Article feed (handled gracefully if empty)
-
-All feeds are **config-driven** and processed uniformly.
+````https://jobicy.com/?feed=job_feed
+○ https://jobicy.com/?feed=job_feed&job_categories=smm&job_ty
+pes=full-time
+○ https://jobicy.com/?feed=job_feed&job_categories=seller&job_t
+ypes=full-time&search_region=france
+○ https://jobicy.com/?feed=job_feed&job_categories=design-multi
+media
+○ https://jobicy.com/?feed=job_feed&job_categories=data-science
+○ https://jobicy.com/?feed=job_feed&job_categories=copywriting
+○ https://jobicy.com/?feed=job_feed&job_categories=business
+○ https://jobicy.com/?feed=job_feed&job_categories=management
+○ https://www.higheredjobs.com/rss/articleFeed.cfm ```
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -81,7 +77,7 @@ All feeds are **config-driven** and processed uniformly.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -96,14 +92,14 @@ All feeds are **config-driven** and processed uniformly.
 ```bash
 cd server
 npm install
-```
+````
 
 Create `.env`:
 
 ```env
 PORT=4000
-MONGO_URI=mongodb://localhost:27017/job_importer
-REDIS_URL=redis://localhost:6379
+MONGO_URI=
+REDIS_URL=
 ```
 
 Start backend:
@@ -130,7 +126,7 @@ http://localhost:3000
 
 ---
 
-## 📡 API Reference
+## API Reference
 
 ### Get Import History
 
@@ -164,7 +160,7 @@ GET /api/import-logs?page=1&limit=20
 
 ---
 
-## 📊 Admin UI
+## Admin UI
 
 - Paginated import history table
 - Auto-refresh every 30 seconds
@@ -174,13 +170,12 @@ GET /api/import-logs?page=1&limit=20
   - Total fetched jobs
   - New / Updated / Failed counts
 
-> **Note:**  
-> “New” jobs are those **never seen before globally**.  
-> Jobs appearing in multiple feeds are **deduplicated** using `externalId`.
+“New” jobs are those **never seen before globally**.  
+Jobs appearing in multiple feeds are **deduplicated** using `externalId`.
 
 ---
 
-## 🔑 Key Design Decisions
+## Key Design Decisions
 
 ### Idempotency
 
@@ -203,7 +198,7 @@ GET /api/import-logs?page=1&limit=20
 
 ---
 
-## 🧪 Validation
+## Validation
 
 - All incoming jobs are validated using **Zod**
 - Invalid jobs are skipped safely
@@ -211,7 +206,7 @@ GET /api/import-logs?page=1&limit=20
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 
 - Parallel feed processing
 - Dead-letter queue
@@ -220,14 +215,7 @@ GET /api/import-logs?page=1&limit=20
 
 ---
 
-## 👨‍💻 Author Notes
-
-This project focuses on **correctness, scalability, and clarity** rather than over-engineering.  
-The architecture mirrors real-world ingestion pipelines used in production systems.
-
----
-
-## ✅ Assignment Checklist
+## Assignment Checklist
 
 - [x] Multi-feed ingestion
 - [x] Cron-based scheduling

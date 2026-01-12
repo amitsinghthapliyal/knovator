@@ -6,5 +6,5 @@ export const jobQueue = new Queue("job-import", {
 });
 
 jobQueue.on("waiting", (jobId) => {
-  console.log("📥 Job waiting:", jobId);
+  console.log("Job waiting:", jobId);
 });

@@ -3,12 +3,10 @@ import { redisConnection } from "../config/redis";
 import { Job } from "../models/Job.model";
 import { ImportLog } from "../models/ImportLog.model";
 
-console.log("👷 Worker booting up...");
-
 new Worker(
   "job-import",
   async (job) => {
-    console.log("👷 Processing job:", job.id);
+    console.log("Processing job:", job.id);
 
     const { importLogId, ...jobData } = job.data;
 
